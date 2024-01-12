@@ -1,5 +1,14 @@
+@import '../../style/mixin.scss';
 
-.sr-only {
+.features {
+  display: flex;
+  flex-direction: column;
+
+  @include Tablet {
+    flex-direction: row;
+  }
+
+  .sr-only {
     border: 0 !important;
     clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
     -webkit-clip-path: inset(50%) !important;
@@ -12,4 +21,6 @@
     width: 1px !important;
     white-space: nowrap !important; /* 3 */
   }
+}
+
   
