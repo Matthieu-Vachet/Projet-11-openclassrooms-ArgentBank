@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import './App.css'
 
 import Home from './pages/home'
 import Login from './pages/login'
@@ -11,7 +10,7 @@ import Footer from './components/footer'
 function App() {
   return (
     <Router>
-      <div>
+      <div className='page-content'>
       <Header />
         <Routes>
           <Route path="/" element={<Home />} />
