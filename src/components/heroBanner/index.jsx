@@ -1,6 +1,6 @@
 import "./style.scss"
 
-function Hero() {
+function HeroBanner() {
   return (
     <div className="hero">
         <section className="hero-content">
@@ -14,4 +14,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default HeroBanner;

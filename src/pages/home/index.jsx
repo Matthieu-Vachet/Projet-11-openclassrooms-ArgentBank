@@ -1,4 +1,4 @@
-import Hero from "../../components/hero";
+import HeroBanner from "../../components/heroBanner";
 import Features from "../../components/features";
 
 import iconChat from "../../assets/icon-chat.png";
@@ -34,12 +34,12 @@ function Home() {
     }
   ]
 
-
   return (
     <main>
-      <Hero />
+      <HeroBanner />
       <section className="features">
         <h2 className="sr-only">Features</h2>
+        {/* Map sur le tableau features */}
         {features.map((e, index) => (
           <Features
             image={e.image}
