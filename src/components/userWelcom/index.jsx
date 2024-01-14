@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./style.scss"
 
-function UserEdit () {
+function UserWelcom () {
     
     // A modif pour Redux
     const { edit, setEdit } = useState(false);
@@ -16,4 +16,4 @@ function UserEdit () {
   )
 }
 
-export default UserEdit
+export default UserWelcom
