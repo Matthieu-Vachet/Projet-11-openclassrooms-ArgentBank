@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import LogoImg from "../../assets/argentBankLogo.png";
+import LogoImg from "../../assets/argentBankLogo.webp";
 import "./style.scss";
 
 function Logo() {
