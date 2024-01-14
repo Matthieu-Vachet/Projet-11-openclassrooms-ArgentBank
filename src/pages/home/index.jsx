@@ -14,22 +14,22 @@ function Home() {
   const features = [
     {
       image: iconChat,
-      alt : "Icon Chat",
-      title : `You are our #1 priority`,
-      description : `Need to talk to a representative? You can get in touch through our 
+      alt: "Icon Chat",
+      title: `You are our #1 priority`,
+      description: `Need to talk to a representative? You can get in touch through our 
       24/7 chat or through a phone call in less than 5 minutes.`
     },
     {
       image: iconMoney,
-      alt : "Icon Money",
-      title : `More savings means higher rates`,
-      description : `The more you save with us, the higher your interest rate will be!`
+      alt: "Icon Money",
+      title: `More savings means higher rates`,
+      description: `The more you save with us, the higher your interest rate will be!`
     },
     {
       image: iconSecurity,
-      alt : "Icon Security",
-      title : `Security you can trust`,
-      description : `We use top of the line encryption to make sure your data and money 
+      alt: "Icon Security",
+      title: `Security you can trust`,
+      description: `We use top of the line encryption to make sure your data and money 
       is always safe.`
     }
   ]

@@ -11,14 +11,14 @@ function App() {
   return (
     <Router>
       <div className='page-content'>
-      <Header />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/userLogin' element={<UserLogin />} />
         </Routes>
         <Footer />
-        </div>
+      </div>
     </Router>
   )
 }
