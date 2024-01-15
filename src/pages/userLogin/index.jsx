@@ -3,7 +3,7 @@ import UserWelcom from "../../components/userWelcom";
 
 import './style.scss';
 
-function UserLogin() {
+export default function UserLogin() {
 
   const account = [
     {
@@ -40,5 +40,3 @@ function UserLogin() {
     </main>
   );
 }
-
-export default UserLogin;

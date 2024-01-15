@@ -1,7 +1,7 @@
 import Button from '../button';
 import './style.scss';
 
-function Account(children) {
+export default function Account(children) {
     return (
 
         <section className="account">
@@ -15,4 +15,3 @@ function Account(children) {
     )
 }
 
-export default Account;

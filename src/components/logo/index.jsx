@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import LogoImg from "../../assets/argentBankLogo.webp";
 import "./style.scss";
 
-function Logo() {
+export default function Logo() {
   return (
     <Link to="/" className="main-nav-logo">
       <img src={LogoImg} alt="Argent Bank Logo" className="main-nav-logo-image" />
@@ -11,5 +11,3 @@ function Logo() {
     </Link>
   )
 }
-
-export default Logo;

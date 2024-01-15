@@ -4,7 +4,7 @@ import Logo from "../logo";
 import "./style.scss"
 
 
-function Header() {
+export default function Header() {
   return (
     <header>
       <nav className="main-nav">
@@ -17,5 +17,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;

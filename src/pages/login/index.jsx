@@ -1,7 +1,7 @@
 import Form from "../../components/form";
 import "./style.scss";
 
-function Login() {
+export default function Login() {
 
   return (
     <main className="main bg-dark">
@@ -13,5 +13,3 @@ function Login() {
     </main>
   );
 }
-
-export default Login;

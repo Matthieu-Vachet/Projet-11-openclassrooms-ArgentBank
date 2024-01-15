@@ -8,7 +8,7 @@ import iconSecurity from "../../assets/icon-security.webp";
 import "./style.scss";
 
 
-function Home() {
+export default function Home() {
 
   // Tableau des features
   const features = [
@@ -53,5 +53,3 @@ function Home() {
     </main>
   );
 }
-
-export default Home;

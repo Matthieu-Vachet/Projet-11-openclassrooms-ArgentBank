@@ -1,6 +1,6 @@
 import "./style.scss"
 
-function Features(children) {
+export default function Features(children) {
 
 
     return (
@@ -12,4 +12,4 @@ function Features(children) {
     )
 }
 
-export default Features
+
