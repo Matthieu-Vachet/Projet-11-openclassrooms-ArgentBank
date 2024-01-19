@@ -3,18 +3,11 @@ import ReactDOM from 'react-dom/client'
 
 // REDUX
 import { Provider } from 'react-redux'
-import { configureStore } from '@reduxjs/toolkit'
-import rootReducer from './redux/reducers'
+import { store } from './store/store'
 
 import App from './App.jsx'
 import './style/style.scss'
 
-// Création du store
-const store = configureStore({
-  reducer: rootReducer,
-  // Activation de l'extension devtools Redux
-  devTools: true,
-})
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
