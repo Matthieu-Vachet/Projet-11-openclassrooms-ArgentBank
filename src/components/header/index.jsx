@@ -9,7 +9,7 @@ import "./style.scss"
 export default function Header() {
 
   const isLogged = useSelector((state) => state.user.isLogin)
-  const nameUser = useSelector((state) => state.user.dataUser.userName)
+  const userName = useSelector((state) => state.user.dataUser.userName)
   let logOption = null;
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ export default function Header() {
       <div>
         <Link to="/userLogin" className="main-nav-item">
           <i className="fa fa-user-circle"></i>
-          <span className="main-nav-name">{nameUser}</span>
+          <span className="main-nav-name">{userName}</span>
         </Link>
         <Link to="/">
           <button className="main-nav-item btn-logout" onClick={logout}>
