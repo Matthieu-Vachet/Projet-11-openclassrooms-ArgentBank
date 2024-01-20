@@ -8,8 +8,10 @@ import "./style.scss";
 
 export default function Form() {
     // Préremplie pour les besoin du projet
-    const [email, setEmail] = useState('tony@stark.com');
-    const [password, setPassword] = useState('password123');
+    const [email, setEmail] = useState(localStorage.getItem('email') || '');
+    const [password, setPassword] = useState(localStorage.getItem('password') || '');
+
+    const [rememberMe, setRememberMe] = useState(localStorage.getItem('rememberMe') === 'true');
 
     const [errorLoginMessage, setErrorLoginMessage] = useState(false);
     const dispatch = useDispatch()
@@ -33,6 +35,16 @@ export default function Form() {
                 console.log(data)
                 dispatch(setUser(data))
                 navigate("/UserLogin")
+
+                if (rememberMe) {
+                    localStorage.setItem('email', email);
+                    localStorage.setItem('password', password);
+                    localStorage.setItem('rememberMe', 'true');
+                } else {
+                    localStorage.removeItem('email');
+                    localStorage.removeItem('password');
+                    localStorage.setItem('rememberMe', 'false');
+                }
             }
 
             if (response.status === 400) {
@@ -61,7 +73,6 @@ export default function Form() {
                     type="email"
                     id="email"
                     value={email}
-                    autoComplete="current-email"
                     onChange={(e) => setEmail(e.target.value)}
                     required />
             </div>
@@ -71,12 +82,15 @@ export default function Form() {
                     type="password"
                     id="password"
                     value={password}
-                    autoComplete="current-password"
                     onChange={(e) => setPassword(e.target.value)}
                     required />
             </div>
             <div className="input-remember">
-                <input type="checkbox" id="remember-me" />
+                <input
+                    type="checkbox"
+                    id="remember-me"
+                    checked={rememberMe}
+                    onChange={(e) => setRememberMe(e.target.checked)} />
                 <label htmlFor="remember-me">Remember me</label>
             </div>
             <button
