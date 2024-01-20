@@ -34,7 +34,7 @@ export default function Form() {
                 const data = await profile.body
                 console.log(data)
                 dispatch(setUser(data))
-                navigate("/UserLogin")
+                navigate("/userLogin")
 
                 if (rememberMe) {
                     localStorage.setItem('email', email);
@@ -49,7 +49,7 @@ export default function Form() {
 
             if (response.status === 400) {
                 setErrorLoginMessage(true)
-                navigate("/Login")
+                navigate("/login")
             }
 
         }
