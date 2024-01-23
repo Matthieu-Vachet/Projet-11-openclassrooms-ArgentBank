@@ -6,6 +6,6 @@
 
 @mixin Mobile {
     @media screen and (min-width: 720px) {
-        @content
+        @content;
     }
 }

@@ -4,18 +4,18 @@ import { useDispatch } from "react-redux";
 import { setLogin, setToken, setUser } from "../../store/actions/userActions";
 import { useNavigate } from "react-router-dom";
 
-import "./style.scss";
+import "./Form.scss";
 
 export default function Form() {
     // Préremplie pour les besoin du projet
-    const [email, setEmail] = useState(localStorage.getItem('email') || '');
-    const [password, setPassword] = useState(localStorage.getItem('password') || '');
+    const [email, setEmail] = useState(localStorage.getItem("email") || "");
+    const [password, setPassword] = useState(localStorage.getItem("password") || "");
 
-    const [rememberMe, setRememberMe] = useState(localStorage.getItem('rememberMe') === 'true');
+    const [rememberMe, setRememberMe] = useState(localStorage.getItem("rememberMe") === "true");
 
     const [errorLoginMessage, setErrorLoginMessage] = useState(false);
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -23,47 +23,45 @@ export default function Form() {
             const response = await fetchLogin({
                 email: email,
                 password: password,
-            })
+            });
             console.log(response);
             console.log(`Email: ${email}`);
             console.log(`Password: ${password}`);
             if (response.status === 200) {
                 dispatch(setLogin(true));
-                dispatch(setToken(response.body.token))
-                const profile = await userProfile(response.body.token)
-                const data = await profile.body
-                console.log(data)
-                dispatch(setUser(data))
-                navigate("/userLogin")
+                dispatch(setToken(response.body.token));
+                const profile = await userProfile(response.body.token);
+                const data = await profile.body;
+                console.log(data);
+                dispatch(setUser(data));
+                navigate("/userLogin");
 
                 if (rememberMe) {
-                    localStorage.setItem('email', email);
-                    localStorage.setItem('password', password);
-                    localStorage.setItem('rememberMe', 'true');
+                    localStorage.setItem("email", email);
+                    localStorage.setItem("password", password);
+                    localStorage.setItem("rememberMe", "true");
                 } else {
-                    localStorage.removeItem('email');
-                    localStorage.removeItem('password');
-                    localStorage.setItem('rememberMe', 'false');
+                    localStorage.removeItem("email");
+                    localStorage.removeItem("password");
+                    localStorage.setItem("rememberMe", "false");
                 }
             }
 
             if (response.status === 400) {
-                setErrorLoginMessage(true)
-                navigate("/login")
+                setErrorLoginMessage(true);
+                navigate("/login");
             }
-
+        } catch (error) {
+            console.log(error);
         }
-        catch (error) {
-            console.log(error)
-        }
-
     }
 
     let errorMessage = null;
     if (errorLoginMessage) {
-        errorMessage = <p style={{ color: "red" }}>Erreur dans l&apos;identifiants ou le mot de passe !</p>
+        errorMessage = (
+            <p style={{ color: "red" }}>Erreur dans l&apos;identifiants ou le mot de passe !</p>
+        );
     }
-
 
     return (
         <form onSubmit={handleSubmit}>
@@ -74,7 +72,8 @@ export default function Form() {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    required />
+                    required
+                />
             </div>
             <div className="input-wrapper">
                 <label htmlFor="password">Password</label>
@@ -83,19 +82,21 @@ export default function Form() {
                     id="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    required />
+                    required
+                />
             </div>
             <div className="input-remember">
                 <input
                     type="checkbox"
                     id="remember-me"
                     checked={rememberMe}
-                    onChange={(e) => setRememberMe(e.target.checked)} />
+                    onChange={(e) => setRememberMe(e.target.checked)}
+                />
                 <label htmlFor="remember-me">Remember me</label>
             </div>
-            <button
-                type="submit"
-                className="sign-in-button">Sign in</button>
+            <button type="submit" className="sign-in-button">
+                Sign in
+            </button>
             {errorMessage}
         </form>
     );
