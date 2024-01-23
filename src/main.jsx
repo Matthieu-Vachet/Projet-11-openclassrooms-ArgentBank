@@ -11,9 +11,9 @@ import "./style/style.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        {/* Ajout du provider pour la connexion avec le store sur toute l'application */}
+        {/* Connexion du store a l'App */}
         <Provider store={store}>
-            {/* Ajout du persistor pour le chargement des données du store */}
+            {/* Ajout du persistor a l'App */}
             <PersistGate loading={null} persistor={persistor}>
                 <App />
             </PersistGate>

@@ -1,7 +1,7 @@
-@import '../../style/mixin.scss';
+@import "../../style/mixin.scss";
 
 .hero {
-    background-image: url('../../assets/bank-tree.webp');
+    background-image: url("../../assets/bank-tree.webp");
     background-position: 0 -50px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -29,9 +29,9 @@
             width: 300px;
             margin: 2rem;
         }
-      }
+    }
 
-      .subtitle {
+    .subtitle {
         font-weight: bold;
         font-size: 1rem;
         margin: 0;
@@ -39,15 +39,14 @@
         @include Tablet {
             font-size: 1.5rem;
         }
-      }
-      
-      .text {
+    }
+
+    .text {
         margin-bottom: 0;
         font-size: 0.9rem;
 
         @include Tablet {
             font-size: 1.2rem;
         }
-      }
-  }
-  
+    }
+}

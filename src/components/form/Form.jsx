@@ -7,13 +7,11 @@ import { useNavigate } from "react-router-dom";
 import "./Form.scss";
 
 export default function Form() {
-    // Préremplie pour les besoin du projet
     const [email, setEmail] = useState(localStorage.getItem("email") || "");
     const [password, setPassword] = useState(localStorage.getItem("password") || "");
-
     const [rememberMe, setRememberMe] = useState(localStorage.getItem("rememberMe") === "true");
-
     const [errorLoginMessage, setErrorLoginMessage] = useState(false);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -24,15 +22,12 @@ export default function Form() {
                 email: email,
                 password: password,
             });
-            console.log(response);
-            console.log(`Email: ${email}`);
-            console.log(`Password: ${password}`);
+
             if (response.status === 200) {
                 dispatch(setLogin(true));
                 dispatch(setToken(response.body.token));
                 const profile = await userProfile(response.body.token);
                 const data = await profile.body;
-                console.log(data);
                 dispatch(setUser(data));
                 navigate("/userLogin");
 
@@ -58,9 +53,7 @@ export default function Form() {
 
     let errorMessage = null;
     if (errorLoginMessage) {
-        errorMessage = (
-            <p style={{ color: "red" }}>Erreur dans l&apos;identifiants ou le mot de passe !</p>
-        );
+        errorMessage = <p style={{ color: "red" }}>Error in Email or password! Please try again</p>;
     }
 
     return (

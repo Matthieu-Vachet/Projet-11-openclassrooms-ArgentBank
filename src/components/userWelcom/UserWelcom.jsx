@@ -1,7 +1,8 @@
 import { useState } from "react";
-import "./UserWelcom.scss";
 import { useSelector } from "react-redux";
 import EditName from "../editName/EditName";
+
+import "./UserWelcom.scss";
 
 export default function UserWelcom() {
     const [edit, setEdit] = useState(false);

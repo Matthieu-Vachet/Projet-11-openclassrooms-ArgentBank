@@ -9,5 +9,5 @@ import userReducer from "./userReducers";
 // Chaque reducer est associé à une clé dans l'objet passé à combineReducers
 // Cette clé sera utilisée pour accéder à la partie de l'état gérée par ce reducer
 export default combineReducers({
-        user: userReducer,
+    user: userReducer,
 });
