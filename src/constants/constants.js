@@ -1,6 +1,14 @@
 import iconChat from "../assets/icon-chat.webp";
 import iconMoney from "../assets/icon-money.webp";
 import iconSecurity from "../assets/icon-security.webp";
+import logoArgentBant from "../assets/argentBankLogo.webp";
+
+export const pictures = [
+    {
+        image: logoArgentBant,
+        alt: "Argent Bank Logo",
+    },
+];
 
 export const features = [
     {
