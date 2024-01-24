@@ -3,7 +3,7 @@ import "./Button.scss";
 
 export default function Button({ children }) {
     return (
-        <div className="account-content-wrapper cta">
+        <div className="transaction-content-wrapper cta">
             <button className="transaction-button">{children}</button>
         </div>
     );

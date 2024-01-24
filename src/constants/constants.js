@@ -33,7 +33,7 @@ is always safe.`,
     },
 ];
 
-export const account = [
+export const transaction = [
     {
         title: `Argent Bank Checking (x8349)`,
         amount: `$2,082.79`,

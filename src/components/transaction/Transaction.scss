@@ -1,6 +1,6 @@
 @import "../../style/mixin.scss";
 
-.account {
+.transaction {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,21 +18,21 @@
         flex-direction: row;
     }
 
-    .account-content-wrapper {
+    .transaction-content-wrapper {
         width: 100%;
         flex: 1;
 
-        .account-amount {
+        .transaction-amount {
             margin: 0;
             font-size: 2.5rem;
             font-weight: bold;
         }
 
-        .account-amount-description {
+        .transaction-amount-description {
             margin: 0;
         }
 
-        .account-title {
+        .transaction-title {
             margin: 0;
             padding: 0;
             font-size: 1rem;
