@@ -5,6 +5,6 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
     plugins: [react()],
     optimizeDeps: {
-        include: ["@reduxjs/toolkit", "redux-persist", "redux-thunk"],
+        include: ["@reduxjs/toolkit"], // 'redux-persist' et 'redux-thunk' ont été supprimés
     },
 });

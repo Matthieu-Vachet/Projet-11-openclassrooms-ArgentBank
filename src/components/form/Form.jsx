@@ -30,6 +30,8 @@ export default function Form() {
                 const data = await profile.body;
                 dispatch(setUser(data));
                 navigate("/userLogin");
+                console.log(data);
+                console.log(response.body.token);
 
                 if (rememberMe) {
                     localStorage.setItem("email", email);
