@@ -6,6 +6,7 @@ import "./UserWelcom.scss";
 
 export default function UserWelcom() {
     const [edit, setEdit] = useState(false);
+
     const userName = useSelector((state) => state.user.dataUser.userName);
 
     return (

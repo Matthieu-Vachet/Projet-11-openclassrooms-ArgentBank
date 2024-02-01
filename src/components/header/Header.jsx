@@ -8,7 +8,9 @@ import "./Header.scss";
 export default function Header() {
     const isLogged = useSelector((state) => state.user.isLogin);
     const userName = useSelector((state) => state.user.dataUser.userName);
+
     let logOption = null;
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
