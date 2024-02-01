@@ -30,7 +30,7 @@
 ###
 
 <div align="center">
-  <img height="200" src="https://raw.githubusercontent.com/Matthieu-Vachet/Projet-10-openclassrooms-Debuggez-une-application-React/main/public/logo512.png"  />
+  <img height="200" src="https://zupimages.net/up/24/05/a28s.png"  />
 </div>
 
 ###
