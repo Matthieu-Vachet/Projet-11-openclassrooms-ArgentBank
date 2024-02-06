@@ -10,7 +10,7 @@ export default function EditName({ setEdit }) {
     const [username, getUsernameChange] = useState("");
 
     const dispatch = useDispatch();
-    
+
     const token = useSelector((state) => state.user.token);
     const userName = useSelector((state) => state.user.dataUser.userName);
     const firstName = useSelector((state) => state.user.dataUser.firstName);
