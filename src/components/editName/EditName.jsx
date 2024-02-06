@@ -18,14 +18,12 @@ export default function EditName({ setEdit }) {
 
     async function onSave(e) {
         e.preventDefault();
-        console.log(token);
         try {
             const response = await userEditProfile(token, username);
             console.log(response);
             if (response.status === 200) {
                 dispatch(setUser(response.body));
                 setEdit(false);
-                console.log(username);
             }
         } catch (error) {
             console.log(error);
